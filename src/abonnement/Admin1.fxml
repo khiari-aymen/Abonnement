@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="717.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abonnement.AdminController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <AnchorPane fx:id="availableB_form" layoutX="134.0" layoutY="-11.0" prefHeight="740.0" prefWidth="991.0" styleClass="nav-form" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="-11.0">
+         <children>
+            <AnchorPane layoutX="21.0" layoutY="58.0" prefHeight="648.0" prefWidth="273.0" styleClass="white-bg" stylesheets="@dashboardDesign.css">
+               <children>
+                  <Button fx:id="availableB_addBtn" layoutX="14.0" layoutY="418.0" mnemonicParsing="false" onAction="#availableBusAdd" prefHeight="47.0" prefWidth="108.0" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="Ajouter" />
+                  <Button fx:id="availableB_resetBtn" layoutX="137.0" layoutY="418.0" mnemonicParsing="false" onAction="#availableBusReset" prefHeight="47.0" prefWidth="108.0" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="Réinitialiser" />
+                  <ComboBox fx:id="typeabn" layoutX="94.0" layoutY="288.0" prefHeight="36.0" prefWidth="149.0" />
+                  <TextField fx:id="idabn" layoutX="94.0" layoutY="48.0" prefHeight="36.0" prefWidth="149.0" />
+                  <TextField fx:id="idclient" layoutX="94.0" layoutY="110.0" prefHeight="36.0" prefWidth="149.0" />
+                  <DatePicker fx:id="Datedeb" layoutX="94.0" layoutY="168.0" prefHeight="36.0" prefWidth="149.0" />
+                  <Label layoutX="25.0" layoutY="58.0" text="iD ABN" />
+                  <Label layoutX="22.0" layoutY="120.0" text="iD Client" />
+                  <Label layoutX="25.0" layoutY="178.0" text="Date Deb" />
+                  <Label layoutX="26.0" layoutY="238.0" text="Duree" />
+                  <Label layoutX="31.0" layoutY="298.0" text="Type" />
+                  <Button fx:id="availableB_deleteBtn" layoutX="13.0" layoutY="484.0" mnemonicParsing="false" onAction="#availableBusDelete" prefHeight="47.0" prefWidth="108.0" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="Supprimer" />
+                  <Button fx:id="availableB_updateBtn" layoutX="137.0" layoutY="484.0" mnemonicParsing="false" onAction="#availableBusUpdate" prefHeight="47.0" prefWidth="108.0" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="Modifier" />
+                  <Button fx:id="retour" layoutX="3.0" layoutY="609.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="69.0" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="Retour" />
+                  <Button fx:id="pdfBtn" layoutX="191.0" layoutY="609.0" mnemonicParsing="false" onAction="#pdfBtn" styleClass="toutBtn" stylesheets="@dashboardDesign.css" text="impprimer" />
+                  <ComboBox fx:id="Duree" layoutX="94.0" layoutY="234.0" prefHeight="36.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="312.0" layoutY="58.0" prefHeight="648.0" prefWidth="649.0" styleClass="white-bg" stylesheets="@dashboardDesign.css">
+               <children>
+                  <TableView fx:id="availableB_tableView" layoutX="14.0" layoutY="55.0" onMouseClicked="#avaialbleBSelectBusData" prefHeight="580.0" prefWidth="617.0" stylesheets="@dashboardDesign.css">
+                    <columns>
+                      <TableColumn fx:id="availableB_col_busID" minWidth="0.0" prefWidth="0.0" text="AbonId" />
+                      <TableColumn fx:id="availableB_col_location" prefWidth="150.0" text="ClientId" />
+                        <TableColumn fx:id="availableB_col_price" prefWidth="183.0" text="Date Deb" />
+                        <TableColumn fx:id="availableB_col_date" prefWidth="141.0" text="Duree" />
+                        <TableColumn fx:id="availableB_col_status" prefWidth="140.0" text="Type" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="availableB_search" layoutX="14.0" layoutY="21.0" onKeyTyped="#availableSearch" prefHeight="17.0" prefWidth="230.0" promptText="search" />
+                  <FontAwesomeIcon glyphName="SEARCH" layoutX="220.0" layoutY="40.0" size="1.3em" text="" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="36.0" prefWidth="255.0" text="Gerér les abonnement" textFill="WHITE">
+               <font>
+                  <Font name="Corbel" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
